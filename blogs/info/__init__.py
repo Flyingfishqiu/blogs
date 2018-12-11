@@ -34,6 +34,8 @@ def create_app(config_name):
     app = Flask(__name__)
     CSRFProtect(app)
     db.init_app(app)
+    from info.model.index import index
+    app.register_blueprint(index)
     global redis_store
     redis_store = redis.StrictRedis(Config.REDIS_HOST, Config.REDIS_PORT)
     app.config.from_object(config[config_name])
