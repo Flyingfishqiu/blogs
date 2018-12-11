@@ -34,6 +34,8 @@ def create_app(config_name):
     app = Flask(__name__)
     CSRFProtect(app)
     db.init_app(app)
+    app.config['SESSION_USE_SIGNER'] = Config.SESSION_USE_SIGNER
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = Config.SQLALCHEMY_TRACK_MODIFICATIONS
     from info.model.index import index
     app.register_blueprint(index)
     global redis_store
