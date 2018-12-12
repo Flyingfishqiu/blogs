@@ -17,6 +17,7 @@ class Config(object):
 
 
 class DevelopementConfig(Config):
+    DEBUG = False
     LOG_LEVEL = logging.DEBUG
 
 
@@ -25,6 +26,6 @@ class ProductionConfig(Config):
 
 
 config = {
-    "development": DevelopementConfig,
-    "production": ProductionConfig
+    "dev": DevelopementConfig,
+    "pro": ProductionConfig
 }
