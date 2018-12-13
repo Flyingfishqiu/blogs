@@ -1,11 +1,11 @@
+import constants
 from . import index
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, current_app
 import response_code
-from models import User, Blogs
+from info.models import User, Blogs
 
 
 def userinfo():
-
     user = User.query.filter(User.is_admin==True).first()
     return user
 
@@ -20,8 +20,11 @@ def blogs():
       """
     page = request.args.get('page', 1)
     per_page = request.args.get('per_page', 10)
-
-    if (type(page),  type(per_page)) != int:
+    try:
+        page = int(page)
+        per_page = int(per_page)
+    except Exception as e:
+        current_app.logger.error(e)
         return jsonify(errno=response_code.RET.PWDERR, errmsg='参数有误')
 
     paginate = Blogs.query.order_by(Blogs.create_time.desc()).paginate(page, per_page,False)
@@ -41,7 +44,18 @@ def blogs():
     }
     return jsonify(errno=response_code.RET.OK, errmsg='OK',data=data)
 
+
 @index.route('/')
 def index_view():
-    user = userinfo()
-    return render_template('index.html',data=user)
+    clicks = []
+    try:
+        clicks = Blogs.query.order_by(Blogs.clicks.desc()).limit(constants.CLICK_RANK_MAX_NEWS)
+    except Exception as e:
+        current_app.logger.error(e)
+
+    data = {
+        'user': userinfo(),
+        'clicks': clicks
+    }
+    return render_template('index.html',data=data)
+

@@ -284,3 +284,261 @@ INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 INFO _internal.py:88 127.0.0.1 - - [12/Dec/2018 17:50:40] "GET / HTTP/1.1" 404 -
 INFO _internal.py:88 127.0.0.1 - - [12/Dec/2018 17:50:45] "GET /index HTTP/1.1" 404 -
 INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:47:31] "GET / HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:47:36] "GET /index HTTP/1.1" 301 -
+ERROR app.py:1761 Exception on /index/ [GET]
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\ext\declarative\clsregistry.py", line 281, in __call__
+    x = eval(self.arg, globals(), self._dict)
+  File "<string>", line 1, in <module>
+NameError: name 'News' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\frame\blogs\blogs\blogs\info\model\index\view.py", line 46, in index_view
+    user = userinfo()
+  File "E:\frame\blogs\blogs\blogs\info\model\index\view.py", line 9, in userinfo
+    user = User.query.filter(User.is_admin==True).first()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\flask_sqlalchemy\__init__.py", line 512, in __get__
+    mapper = orm.class_mapper(type)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\orm\base.py", line 421, in class_mapper
+    mapper = _inspect_mapped_class(class_, configure=configure)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\orm\base.py", line 400, in _inspect_mapped_class
+    mapper._configure_all()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\orm\mapper.py", line 1276, in _configure_all
+    configure_mappers()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\orm\mapper.py", line 3033, in configure_mappers
+    mapper._post_configure_properties()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\orm\mapper.py", line 1832, in _post_configure_properties
+    prop.init()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\orm\interfaces.py", line 183, in init
+    self.do_init()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\orm\relationships.py", line 1655, in do_init
+    self._process_dependent_arguments()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\orm\relationships.py", line 1712, in _process_dependent_arguments
+    self.target = self.mapper.mapped_table
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 767, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\orm\relationships.py", line 1628, in mapper
+    argument = self.argument()
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\sqlalchemy\ext\declarative\clsregistry.py", line 293, in __call__
+    (self.prop.parent, self.arg, n.args[0], self.cls)
+sqlalchemy.exc.InvalidRequestError: When initializing mapper Mapper|User|info_user, expression 'News' failed to locate a name ("name 'News' is not defined"). If this is a class name, consider adding this relationship() to the <class 'info.models.User'> class after both dependent classes have been defined.
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:47:36] "GET /index/ HTTP/1.1" 500 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:10] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:10] "GET /static/css/common.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:10] "GET /static/img/logo.png HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:10] "GET /static/img/temp/banner1.jpg HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:10] "GET /static/plugin/pifu/pifu.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:10] "GET /static/plugin/Hui-iconfont/1.0.8/iconfont.min.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:10] "GET /static/plugin/h-ui/css/H-ui.min.css HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/plugin/pifu/pifu.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/plugin/jquery/1.9.1/jquery.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/plugin/layer/3.0/layer.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/js/common.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/plugin/Hui-iconfont/1.0.8/iconfont.woff HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/img/temp/banner8.png HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/plugin/h-ui/js/H-ui.min.js HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/img/001.png HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/plugin/h-ui/images/slider-arrow.png HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /static/plugin/layer/3.0/skin/default/layer.css?v=3.0.3303 HTTP/1.1" 304 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 08:49:11] "GET /index/favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:10:02] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:10:06] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:11:18] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:13:15] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:13:15] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:18:09] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:23:47] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:26:41] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:26:43] "GET /index/temp/gg.jpg HTTP/1.1" 404 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:27:50] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:27:52] "GET /index/temp/gg.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:28:24] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:32:00] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:32:00] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:32:14] "GET /index/temp/gg.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:32:22] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:32:22] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:34:19] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:34:19] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:34:20] "GET /index/temp/gg.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:34:21] "GET /index/bogs_list?page=2 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:34:22] "GET /index/bogs_list?page=3 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:34:23] "GET /index/bogs_list?page=4 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:34:37] "GET /article-lists/10.html HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:34:40] "GET /index/article_detail.html HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:36:53] "GET /index/temp/gg.jpg HTTP/1.1" 404 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:38:05] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:38:06] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:38:06] "GET /index/temp/gg.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:38:09] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:38:10] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in 'E:\\frame\\blogs\\blogs\\blogs\\app.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:39:04] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:39:04] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:41:49] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:41:49] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:42:13] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:42:14] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:42:16] "GET /index/temp/gg.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:42:16] "GET /index/bogs_list?page=2 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:43:46] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:43:46] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:43:46] "GET /index/bogs_list?page=2 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:45:07] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:45:07] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:45:41] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:45:41] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:46:04] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:46:04] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:46:54] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:46:54] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:47:19] "GET / HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:47:24] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:47:25] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:49:09] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:49:10] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/plugin/h-ui/css/H-ui.min.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/plugin/Hui-iconfont/1.0.8/iconfont.min.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/css/common.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/plugin/pifu/pifu.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/img/logo.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/img/temp/banner1.jpg HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/plugin/jquery/1.9.1/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/plugin/layer/3.0/layer.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/plugin/h-ui/js/H-ui.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/plugin/pifu/pifu.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/js/common.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/plugin/Hui-iconfont/1.0.8/iconfont.woff HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/img/001.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:05] "GET /static/plugin/h-ui/images/slider-arrow.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:06] "GET /static/plugin/layer/3.0/skin/default/layer.css?v=3.0.3303 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:06] "GET /static/img/temp/banner8.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:06] "GET /static/plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:06] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:51:06] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/h-ui/css/H-ui.min.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/Hui-iconfont/1.0.8/iconfont.min.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/css/common.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/pifu/pifu.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/img/logo.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/img/temp/banner1.jpg HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/jquery/1.9.1/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/layer/3.0/layer.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/h-ui/js/H-ui.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/pifu/pifu.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/js/common.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/img/temp/banner8.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/img/001.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/h-ui/images/slider-arrow.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/Hui-iconfont/1.0.8/iconfont.woff HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:38] "GET /static/plugin/layer/3.0/skin/default/layer.css?v=3.0.3303 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:53:39] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:54:03] "GET /index/bogs_list?page=2 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:54:04] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:54:04] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:54:06] "GET /index/temp/gg.jpg HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:54:07] "GET /index/bogs_list?page=2 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:54:09] "GET /index/bogs_list?page=3 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 09:54:10] "GET /index/bogs_list?page=4 HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in 'E:\\frame\\blogs\\blogs\\blogs\\info\\model\\index\\view.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Detected change in 'E:\\frame\\blogs\\blogs\\blogs\\info\\model\\index\\view.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Detected change in 'E:\\frame\\blogs\\blogs\\blogs\\info\\model\\index\\view.py', reloading
+INFO _internal.py:88  * Restarting with stat
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 10:11:16] "GET /index/ HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [13/Dec/2018 10:11:16] "GET /index/bogs_list?page=1 HTTP/1.1" 200 -
+INFO _internal.py:88  * Detected change in 'E:\\frame\\blogs\\blogs\\blogs\\info\\model\\index\\view.py', reloading
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 195-898-136
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)

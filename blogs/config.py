@@ -17,11 +17,12 @@ class Config(object):
 
 
 class DevelopementConfig(Config):
-    DEBUG = False
+    DEBUG = True
     LOG_LEVEL = logging.DEBUG
 
 
 class ProductionConfig(Config):
+    DEBUG = False
     LOG_LEVEL = logging.ERROR
 
 

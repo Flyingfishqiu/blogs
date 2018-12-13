@@ -49,7 +49,7 @@ class User(BaseModel, db.Model):
         default="MAN")
 
     # 当前用户收藏的所有新闻
-    collection_news = db.relationship("News", secondary=tb_user_collection, lazy="dynamic")  # 用户收藏的新闻
+    collection_news = db.relationship("Blogs", secondary=tb_user_collection, lazy="dynamic")  # 用户收藏的新闻
     # 用户所有的粉丝，添加了反向引用followed，代表用户都关注了哪些人
     followers = db.relationship('User',
                                 secondary=tb_user_follows,
@@ -59,7 +59,7 @@ class User(BaseModel, db.Model):
                                 lazy='dynamic')
 
     # 当前用户所发布的新闻
-    news_list = db.relationship('News', backref='user', lazy='dynamic')
+    news_list = db.relationship('Blogs', backref='user', lazy='dynamic')
 
     def to_dict(self):
         resp_dict = {
@@ -178,7 +178,7 @@ class Category(BaseModel, db.Model):
 
     id = db.Column(db.Integer, primary_key=True)  # 分类编号
     name = db.Column(db.String(64), nullable=False)  # 分类名
-    news_list = db.relationship('News', backref='category', lazy='dynamic')
+    news_list = db.relationship('Blogs', backref='category', lazy='dynamic')
 
     def to_dict(self):
         resp_dict = {
